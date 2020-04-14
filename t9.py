@@ -4,7 +4,6 @@ from math import sqrt
 
 app = Flask(_name_)
 
-
 @app.route('/')
 def func_primo():
 
