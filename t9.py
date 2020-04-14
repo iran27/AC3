@@ -1,31 +1,34 @@
 import os
-from flask import Flask,jsonify,request
+from flask import Flask, jsonify, request
 from math import sqrt
+
 
 app = Flask(__name__)
 
 
 @app.route('/')
-def func_primos():
+def cemprimos():
+    limite = 99
 
-    cont = 0
-    num = 2
-    lista = []
-    while (cont <= 100):
-        normal = False
-        for i in range(2, num):
-            if (num % i == 0):
-                normal = True
-                break
-            if (not normal):
-                cont += 1
-                lista.append(num)
+    c = 1
+    p = 1
+    numero = 3
 
-            num += 1
+    primos = "2,"
 
-    return str(lista)
+    while p < limite:
+        ehprimo = 1
+        for i in range(2, numero):
+            ehprimo = 0
+            break
+        if (ehprimo):
+            primos = primos + str(numero)
+            p += 1
+        numero += 1
+
+    return primos
 
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port)
