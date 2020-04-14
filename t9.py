@@ -5,7 +5,7 @@ from math import sqrt
 app = Flask(_name_)
 
 @app.route('/')
-def func_primo():
+def func_primos():
 
     cont = 0
     num = 2
